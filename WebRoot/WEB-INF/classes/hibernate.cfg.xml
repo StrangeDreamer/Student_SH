@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库连接信息 -->
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property> 
+		<property name="connection.username">sa</property>
+		<property name="connection.password">123456</property>
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=study;useUnicode=true&amp;characterEncoding=UTF8</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- session创建方式 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- 加载映射 -->
+		<mapping resource="cn/wjy/enity/Students.hbm.xml" />
+		<mapping resource="cn/wjy/enity/Users.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
